@@ -1,0 +1,70 @@
+/* Container for the project detail list */
+.project-detail-list-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visual separation */
+  }
+  
+  /* Title of the list */
+  .project-detail-list-container h1 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* List styling */
+  .project-detail-list-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .project-detail-list-container li {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .project-detail-list-container li strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Button container styling */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Button styling */
+  .add-another-button, .next-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Add Another Project Detail button */
+  .add-another-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  /* Next button */
+  .next-button {
+    background-color: #2196F3; /* Blue */
+    color: white;
+  }
+  
+  /* Button hover effects */
+  .add-another-button:hover, .next-button:hover {
+    opacity: 0.9; /* Slightly transparent on hover */
+  }
+  

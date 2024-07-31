@@ -1,0 +1,78 @@
+/* Navbar.css */
+
+nav {
+    position: fixed;
+    z-index: 500;
+    width: 100%;
+    background-color: white; /* Background color for the navbar */
+    border-bottom: 1px solid #ccc; /* Border for the bottom of the navbar */
+    height: 75px; /* Height of the navbar */
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Align items to the right */
+    align-items: center; /* Vertically center the items */
+    padding: 0 20px; /* Padding for left and right */
+  }
+  
+  ul {
+    list-style-type: none; /* Remove default list style */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Flexbox layout for list items */
+    align-items: center; /* Vertically center the list items */
+  }
+  
+  li {
+    margin-right: 20px; /* Space between the list items */
+  }
+  
+  a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Link color */
+    font-size: 18px; /* Font size for links */
+    padding: 10px 15px; /* Padding inside the links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and color */
+  }
+  
+  a:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  a:active {
+    background-color: #ddd; /* Background color when active/clicked */
+  }
+  
+  .navbar-button {
+    background-color: navy; /* Button background color */
+    color: white; /* Button text color */
+    font-size: 18px; /* Font size for button */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Cursor pointer for button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and color */
+  }
+  
+  .navbar-button:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+    color: navy; /* Text color on hover */
+  }
+  
+  .navbar-button:active {
+    background-color: #ddd; /* Background color when active/clicked */
+  }
+
+  .navbar-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    color: #333232;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+  }

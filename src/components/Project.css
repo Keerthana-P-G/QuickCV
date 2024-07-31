@@ -1,0 +1,84 @@
+/* Container for the project form */
+.project-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visual separation */
+}
+
+/* Title of the form */
+.project-container h1 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form styling with older grid layout */
+.project-form {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 15px;
+}
+
+/* Form group styling with grid layout */
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none; /* Prevent resizing */
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Button container styling with older grid layout */
+.button-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  gap: 10px;
+}
+
+/* Button styling */
+.submit, .view-list-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Add Project button */
+.submit {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+/* View Project Details List button */
+.view-list-button {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+/* Button hover effects */
+.submit:hover, .view-list-button:hover {
+  opacity: 0.9; /* Slightly transparent on hover */
+}

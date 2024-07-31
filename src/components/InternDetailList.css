@@ -1,0 +1,88 @@
+.intern-detail-list-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visual separation */
+}
+
+/* Title of the list */
+.intern-detail-list-container h1 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* List styling */
+.intern-detail-list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.intern-detail-list-container li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Adds a separator line between items */
+  display: grid;
+  grid-template-columns: 1fr auto; /* Adjust the column widths */
+  gap: 10px;
+}
+
+.intern-detail-list-container strong {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Buttons container styling */
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-another-button, .next-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-another-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.next-button {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.add-another-button:hover, .next-button:hover {
+  opacity: 0.9; /* Slightly transparent on hover */
+}
+
+/* Detail actions styling */
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  margin-right:10px;
+  margin-top: 1px;
+}
+
+.edit-button, .delete-button {
+  padding: 5px 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.delete-button {
+  background-color: #2196F3;
+  color: white;
+}

@@ -1,0 +1,79 @@
+.skills-interest-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visual separation */
+}
+
+.skills-interest-container h1 {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.skills-interest-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skills-grid, .interests-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-grid h2, .interests-grid h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+  margin-left:10px;
+}
+
+.form-group input {
+  width: 80%;
+  padding: 7px;
+  margin-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.submit-button-SI {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-button-SI {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
+.submit-button-SI:hover {
+  opacity: 0.9; /* Slightly transparent on hover */
+}

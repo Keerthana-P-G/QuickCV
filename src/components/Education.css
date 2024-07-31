@@ -1,0 +1,90 @@
+.education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 100px;
+    background-color: white;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  .education-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .education-details-container {
+      justify-content: center;
+      padding-left: 350px;
+  }
+  .education-form label {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .education-form input,
+  .education-form select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+  }
+  
+  .education-form .school-name,
+  .education-form .school-education,
+  .education-form .degree,
+  .education-form .college-name,
+  .education-form .field-of-study,
+  .education-form .gpa,
+  .education-form .honors {
+    grid-column: span 2;
+  }
+  
+  .education-form .graduation-date {
+    display: flex;
+    justify-content: space-between;
+    grid-column: span 2;
+  }
+  
+  .education-form .graduation-date select {
+    width: 48%;
+  }
+  
+  .button-container-e {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 17px;
+  }
+  
+  .next-button {
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+  }
