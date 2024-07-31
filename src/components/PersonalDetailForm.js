@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './PersonalDetailsForm.css';
+import { Link } from 'react-router-dom'; // Import Link
+import './PersonalDetailForm.css';
 
 function PersonalDetailsForm() {
   const initialState = {
@@ -13,6 +14,7 @@ function PersonalDetailsForm() {
 
   const [personalDetails, setPersonalDetails] = useState(initialState);
   const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const { firstName, lastName, email, phone, github, linkedin } = personalDetails;
@@ -29,7 +31,8 @@ function PersonalDetailsForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Personal Details Submitted!\n' + JSON.stringify(personalDetails, null, 2));
+    // Set submitted state to true after form submission
+    setSubmitted(true);
   };
 
   return (
@@ -103,9 +106,16 @@ function PersonalDetailsForm() {
             </label>
           </div>
           <div className="button-group">
-            <button type="submit" disabled={!isSubmitEnabled}>Submit Your Details</button>
+            <button className='bbb'type="submit" disabled={!isSubmitEnabled}>Submit Your Details</button>
           </div>
         </form>
+        {/* Conditionally render Link after submission */}
+        {submitted && (
+          <div className="navigation-link">
+            <p>Your details have been submitted. Proceed to the next step:</p>
+            <Link to="/education">Go to Education Page</Link>
+          </div>
+        )}
       </div>
     </div>
   );

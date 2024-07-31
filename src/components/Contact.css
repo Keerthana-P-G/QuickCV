@@ -4,15 +4,17 @@
     align-items: center;
     font-family: Arial, sans-serif;
     padding: 20px;
+    
   }
   
   .contact-header {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 100px;
   }
   
   .contact-subtitle {
-    color: #a1a1a1;
+    color: rgb(62, 60, 60);
     font-size: 14px;
     margin: 0;
   }
@@ -61,7 +63,7 @@
     min-height: 100px;
   }
   
-  button {
+  .button-con {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -72,6 +74,6 @@
     cursor: pointer;
   }
   
-  button:hover {
+  .button-con:hover {
     background-color: #0056b3;
   }

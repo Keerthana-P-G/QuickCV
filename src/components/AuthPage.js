@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
 import './Auth.css';
 
 const AuthPage = () => {
@@ -7,10 +8,18 @@ const AuthPage = () => {
 
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [signupErrors, setSignupErrors] = useState({
+    username: '',
+    password: '',
+    email: ''
+  });
+
+  const navigate = useNavigate();
 
   const isEmailValid = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,23 +27,23 @@ const AuthPage = () => {
   };
 
   const handleSignUp = () => {
-    let errorMessage = '';
+    let errors = {};
 
-    if (username.trim() === '' || username.length < 3) {
-      errorMessage += 'Username must be at least 5 characters.\n';
+    if (username.trim() === '' || username.length < 5) {
+      errors.username = 'Username must be at least 5 characters.';
     }
 
-    if (password.trim() === '' || password.length < 5) {
-      errorMessage += 'Password must be at least 8 characters.\n';
+    if (password.trim() === '' || password.length < 8) {
+      errors.password = 'Password must be at least 8 characters.';
     }
 
     if (email.trim() === '' || !isEmailValid(email)) {
-      errorMessage += 'Please provide a valid email address.\n';
+      errors.email = 'Please provide a valid email address.';
     }
 
-    if (errorMessage !== '') {
-      alert(errorMessage);
-    } else {
+    setSignupErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
       setIsRegistered(true);
       setIsLogin(true);
       alert('Registration successful! You can now log in.');
@@ -42,10 +51,11 @@ const AuthPage = () => {
   };
 
   const handleLogin = () => {
-    if (loginUsername.length >= 3 && loginPassword.length >= 5) {
-      alert('Login successful!');
+    if (loginUsername.length >= 5 && loginPassword.length >= 8) {
+      setLoginError('');
+      navigate('/');
     } else {
-      alert('Invalid credentials. Please try again.');
+      setLoginError('Invalid credentials. Please try again.');
     }
   };
 
@@ -56,10 +66,17 @@ const AuthPage = () => {
     setEmail('');
     setLoginUsername('');
     setLoginPassword('');
+    setSignupErrors({});
   };
 
   const togglePage = () => {
     setIsLogin(!isLogin);
+    setLoginError('');
+    setSignupErrors({
+      username: '',
+      password: '',
+      email: ''
+    });
   };
 
   return (
@@ -75,14 +92,25 @@ const AuthPage = () => {
           <h2 className="auth-heading">LOGIN</h2>
           <label className="auth-label">
             Username
-            <input className="auth-input" type="text" value={loginUsername} onChange={(e) => setLoginUsername(e.target.value)} />
+            <input
+              className="auth-input"
+              type="text"
+              value={loginUsername}
+              onChange={(e) => setLoginUsername(e.target.value)}
+            />
           </label>
           <br />
           <label className="auth-label">
             Password
-            <input className="auth-input" type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
+            <input
+              className="auth-input"
+              type="password"
+              value={loginPassword}
+              onChange={(e) => setLoginPassword(e.target.value)}
+            />
           </label>
           <br />
+          {loginError && <p className="auth-error">{loginError}</p>}
           <button className="auth-button" onClick={handleLogin}>Log In</button>
           <p>Don't have an account? <button className='auth-button' onClick={togglePage}>Sign Up</button></p>
         </div>
@@ -91,17 +119,35 @@ const AuthPage = () => {
           <h2 className="auth-heading">REGISTER</h2>
           <label className="auth-label">
             Username
-            <input className="auth-input" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input
+              className="auth-input"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            {signupErrors.username && <p className="auth-error">{signupErrors.username}</p>}
           </label>
           <br />
           <label className="auth-label">
             Password
-            <input className="auth-input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input
+              className="auth-input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {signupErrors.password && <p className="auth-error">{signupErrors.password}</p>}
           </label>
           <br />
           <label className="auth-label">
             Email
-            <input className="auth-input" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input
+              className="auth-input"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {signupErrors.email && <p className="auth-error">{signupErrors.email}</p>}
           </label>
           <br />
           <button className="auth-button" onClick={handleSignUp}>Sign Up</button>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Import Link
 import './Education.css'; // Adjust the CSS file name accordingly
 
 const Education = ({ onAddEducationDetail }) => {
@@ -51,7 +51,7 @@ const Education = ({ onAddEducationDetail }) => {
 
   return (
     <div className="education-details-container">
-    <h1>EDUCATION DETAILS</h1>
+      <h1 className='edu-head'>EDUCATION DETAILS</h1>
       <form onSubmit={handleSubmit} className="education-form">
         <label>
           School Name:
@@ -71,7 +71,6 @@ const Education = ({ onAddEducationDetail }) => {
             required
           />
         </label>
-        
         <label>
           College Name:
           <input
@@ -151,14 +150,14 @@ const Education = ({ onAddEducationDetail }) => {
           </div>
         </label>
         <div className="button-container-e">
-          <button type="submit" className="add-button">Add</button>
-          
-          <Link to="/education-detail-list">
-            <button type="button" className="view-list-button">View Education Details List</button>
-          </Link>
-          
+        <Link to="/intern"> <button type="submit" className="add-button">Add</button></Link>
         </div>
       </form>
+      {/* {submitted && (
+        <div className="redirect-link">
+          Go to Intern Page
+        </div>
+      )} */}
     </div>
   );
 };

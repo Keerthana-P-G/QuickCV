@@ -32,7 +32,7 @@
 }
 
 /* Buttons container styling */
-.button-container {
+.button-container-indet {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;

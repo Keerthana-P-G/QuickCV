@@ -1,42 +1,32 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.css';
-import Home from './Home';
 
 const Nav = () => {
   return (
-    <div>
-        <nav>
-        <div className="navbar-header">
-        <h2 className="navbar-brand">QuickCV</h2>        </div>
-
+    <nav>
+      <div className="navbar-header">
+        <h2 className="navbar-brand">QuickCV</h2>
+      </div>
       <ul>
         <li>
-            <a href='Home.js'>HOME</a>
-          
+          <Link to="/">HOME</Link>
         </li>
         <li>
-            <a href='./AuthPage.js'>
-          LOGIN 
-          </a>
-        </li>
-
-        <li>
-            <a>
-          CONTACT</a>
+          <Link to="/login">LOGIN</Link>
         </li>
         <li>
-            <a>
-          ABOUT</a>
+          <Link to="/contact">CONTACT</Link>
+        </li>
+        <li>
+          <Link to="/about">ABOUT</Link>
         </li>
         <li>
           <button className="navbar-button">Build My Resume</button>
         </li>
       </ul>
     </nav>
+  );
+};
 
-    <Home/>
-    </div>
-  )
-}
-
-export default Nav
+export default Nav;

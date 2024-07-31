@@ -23,7 +23,7 @@ const InternDetailList = ({ internDetails, onAddAnother, onEdit, onDelete }) => 
           </li>
         ))}
       </ul>
-      <div className="button-container">
+      <div className="button-container-indet">
         <Link to="/intern-details" onClick={onAddAnother}>
           <button className="add-another-button">Add Another Intern Detail</button>
         </Link>

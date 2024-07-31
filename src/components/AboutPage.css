@@ -1,0 +1,38 @@
+/* AboutPage.css */
+
+.about-container {
+    background-image: url('image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+  
+  .about-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-paragraph {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .about-bold {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
