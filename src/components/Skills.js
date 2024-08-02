@@ -37,7 +37,8 @@ const Skills = () => {
   };
 
   return (
-    <div className="skills-interest-container">
+    <div className='skillint'>
+      <div className="skills-interest-container">
       <h1>Skills and Interests</h1>
       {error && <p className="error-message">{error}</p>}
       <form className="skills-interest-form" onSubmit={handleSubmit}>
@@ -75,6 +76,7 @@ const Skills = () => {
           <button type="submit" className="submit-button-SI">Submit</button>
         </div>
       </form>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,20 @@
 /* Navbar.css */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 76px; /* Adjust the size as needed */
+  height: auto;
+  margin-right: 10px; /* Space between the logo and the text */
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+  font-size: 24px; /* Adjust the font size as needed */
+}
 
 nav {
   position: fixed; /* Fixes the navbar to the top of the page */
@@ -13,6 +29,7 @@ nav {
   justify-content: space-between; /* Align items to the right */
   align-items: center; /* Vertically center the items */
   padding: 0 20px; /* Padding for left and right */
+  background-color: #e4e6e5;
 }
 
 ul {
@@ -29,21 +46,21 @@ li {
 
 a {
   text-decoration: none; /* Remove underline from links */
-  color: black; /* Link color */
+  color: black; /* Default link color */
   font-size: 18px; /* Font size for links */
   padding: 10px 15px; /* Padding inside the links */
   border-radius: 5px; /* Rounded corners for links */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and color */
 }
 
-a:hover {
-  background-color: #f0f0f0; /* Background color on hover */
-  text-decoration: underline; /* Underline on hover */
+/* a:hover {
+  background-color: #f0f0f0; 
+  text-decoration: none;
 }
 
 a:active {
-  background-color: #ddd; /* Background color when active/clicked */
-}
+  background-color: #ddd; 
+} */
 
 .navbar-button {
   background-color: navy; /* Button background color */
@@ -83,4 +100,21 @@ a:active {
 body {
   margin: 0; /* Remove default margin */
   padding-top: 75px; /* Add padding-top to prevent content from overlapping the navbar */
+}
+
+/* Specific colors for each link */
+.nav-link-home {
+  color: black;
+}
+
+.nav-link-login {
+  color: black;
+}
+
+.nav-link-contact {
+  color: black;
+}
+
+.nav-link-about {
+  color: black;
 }

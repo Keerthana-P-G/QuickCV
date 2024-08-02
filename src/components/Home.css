@@ -1,69 +1,102 @@
+/* Home.css */
+.home-body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
+  color: white;
+  margin: 0;
+  padding: 70px 0 0 0; /* Adjust this padding to the height of the navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 75px); /* Full height minus navbar height */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 .home-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    position: relative;
-  }
-  
-  .info-section {
-    width: 50%;
-    margin-top: 10%;
-  }
-  
-  .info-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .info-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .create-resume-button {
-    background-color: #61dafb;
-    border: none;
-    color: black;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .create-resume-button:hover {
-    background-color: #21a1f1;
-  }
-  
-  .image-section {
-    width: 50%;
-    margin-top: 10%;
-  }
-  
-  .image-section img {
-    max-width: 100%;
-    height: auto;
-    width: 600px;
-    box-shadow:#61dafb;
-    
-  }
-  .help-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .help-icon:hover {
-    background-color: #0056b3;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: rgba(18, 18, 53, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  max-width: 990px;
+  width: 90%;
+}
+
+.info-section {
+  width: 50%;
+}
+
+.info-section h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #61dafb;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.info-section p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #d0d0e1;
+  line-height: 1.6;
+}
+
+.create-resume-button {
+  background: linear-gradient(90deg, #61dafb 0%, #21a1f1 100%);
+  border: none;
+  color: white;
+  padding: 20px 100px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.create-resume-button:hover {
+  background: linear-gradient(90deg, #21a1f1 0%, #61dafb 100%);
+  transform: scale(1.05);
+}
+
+.image-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+}
+
+.image-section img:hover {
+  transform: scale(1.05);
+}
+
+.help-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.help-icon:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}

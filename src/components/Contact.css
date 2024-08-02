@@ -4,17 +4,20 @@
     align-items: center;
     font-family: Arial, sans-serif;
     padding: 20px;
+  height: calc(100vh - 115px); 
+  background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
+  
     
   }
   
   .contact-header {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 100px;
+    /* margin-top: 100px; */
   }
   
   .contact-subtitle {
-    color: rgb(62, 60, 60);
+    color: white;
     font-size: 14px;
     margin: 0;
   }
@@ -25,7 +28,7 @@
   }
   
   .contact-description {
-    color: #5a5a5a;
+    color: white;
     font-size: 16px;
     margin: 0;
   }
@@ -50,7 +53,14 @@
     font-weight: bold;
   }
   
-  .form-group input,
+  .form-group input{
+ 
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+  }
+
   .form-group textarea {
     padding: 10px;
     font-size: 14px;
@@ -58,9 +68,11 @@
     border-radius: 5px;
   }
   
+  
   .form-group textarea {
     resize: vertical;
     min-height: 100px;
+    margin-left: 10px;
   }
   
   .button-con {

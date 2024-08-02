@@ -39,7 +39,8 @@ const Project = ({ onAddProjectDetail }) => {
   };
 
   return (
-    <div className="project-container">
+    <div className="procontainer">
+      <div className='project-container'>
       <h1>PROJECT DETAILS</h1>
       <p>Please provide details about your projects here.</p>
       {error && <p className="error-message">{error}</p>}
@@ -66,7 +67,7 @@ const Project = ({ onAddProjectDetail }) => {
         </div>
         <div className="form-group">
           <label htmlFor="description">Description:</label>
-          <textarea 
+          <textarea className='project-textarea' 
             id="description" 
             name="description" 
             rows="7" 
@@ -82,6 +83,7 @@ const Project = ({ onAddProjectDetail }) => {
           
         </div>
       </form>
+    </div>
     </div>
   );
 };

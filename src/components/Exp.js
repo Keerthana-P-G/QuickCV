@@ -19,19 +19,25 @@ function Exp() {
       <header className="Exp-header">
         <h1>How long have you been working?</h1>
         <p>We'll find the best templates for your experience level.</p>
-        <div className="buttons-container">
-          <button onClick={handleNoExperienceClick}>No Experience</button>
-          <button>Less Than 3 Years</button>
-          <button>3-5 Years</button>
-          <button>5-10 Years</button>
-          <button>10+ Years</button>
+        <div >
+          <button className='B-exp' onClick={handleNoExperienceClick} >No Experience</button>
+          <Link to="/personal-detail-form">
+          <button className='B-exp' >Less Than 3 Years</button></Link>
+          <Link to="/personal-detail-form">
+          <button className='B-exp' >3-5 Years</button></Link>
+          <Link to="/personal-detail-form">
+          <button className='B-exp' >5-10 Years</button></Link>
+          <Link to="/personal-detail-form">
+          <button className='B-exp'>10+ Years</button></Link>  
         </div>
         {showStudentQuestion && (
           <div className="student-question">
             <h2>Are you a student?</h2>
             <div className="buttons-container">
-              <button onClick={handleYesStudentClick}>Yes</button>
-              <button>No</button>
+              <button  className='B-exp' onClick={handleYesStudentClick}>Yes</button>
+              <Link to="/personal-detail-form">
+              <button className='B-exp' >No</button>
+              </Link>
             </div>
           </div>
         )}

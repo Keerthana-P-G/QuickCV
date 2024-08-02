@@ -1,8 +1,29 @@
+/* Container for the intern detail list */
 .intern-detail-list-container {
   padding: 20px;
   max-width: 800px;
   margin: 50px auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visual separation */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ddd;
+  margin-top: 0px;
+  box-sizing: border-box; 
+  border-radius: 5px;
+}
+
+.intdet-bcg {
+  /* background-image: url("details6.avif"); 
+  background-position: center;
+  background-repeat: no-repeat;  */
+  background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
+  /* background: linear-gradient(90deg, #61dafb 0%, #21a1f1 100%); */
+
+  background-repeat: repeat;
+  padding-top: 50px; 
+  padding-bottom: 50px; 
+  min-height: 100vh;
+  max-height: max-content;
+  /* height:calc(100vh - 75px); */
+  box-sizing: border-box;
 }
 
 /* Title of the list */
@@ -22,8 +43,13 @@
   padding: 10px;
   border-bottom: 1px solid #ddd; /* Adds a separator line between items */
   display: grid;
-  grid-template-columns: 1fr auto; /* Adjust the column widths */
+  grid-template-columns: 1fr ; /* Adjust the column widths */
   gap: 10px;
+}
+
+.grid-int{
+  grid-template-columns: 1fr ; /* Adjust the column widths */
+    
 }
 
 .intern-detail-list-container strong {
@@ -64,7 +90,7 @@
 .detail-actions {
   display: flex;
   gap: 10px;
-  margin-right:10px;
+  margin-right: 10px;
   margin-top: 1px;
 }
 

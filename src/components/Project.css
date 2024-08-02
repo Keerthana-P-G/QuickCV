@@ -1,9 +1,22 @@
 /* Container for the project form */
+
+.procontainer{
+  background-image: url("details6.avif"); /* Add your image URL here */
+  background-size: cover;
+  background-position: center;
+  /* height: 100vh; */
+  /* height: calc(100vh - px); */
+  padding-top: 1px; 
+  padding-bottom: 5px; 
+    box-sizing: border-box; 
+}
 .project-container {
   padding: 20px;
   max-width: 800px;
   margin: 50px auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visual separation */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ddd;
+ /* Optional: adds a shadow for better visual separation */
 }
 
 /* Title of the form */

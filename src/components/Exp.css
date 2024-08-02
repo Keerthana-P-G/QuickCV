@@ -1,73 +1,79 @@
 /* src/Exp.css */
 .Exp {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .Exp-header {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .Exp-footer {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .buttons-container-exp {
-    justify-content: center;
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .B-exp {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .B-exp:hover {
-    background-color: #0056b3;
-  }
-  
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .student-question {
-    margin-top: 20px;
-  }
-  
-  .student-question h2 {
-    margin-bottom: 10px;
-  }
-  
-  .education-options {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .education-options h2 {
-    margin-bottom: 10px;
-  }
-  
-  .education-options p {
-    margin-bottom: 20px;
-  }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  height: calc(100vh - 75px);
+  background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
+}
+
+.Exp-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Exp-header p,h2{
+  color: white;
+}
+.Exp-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.buttons-container-ex {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+ 
+}
+
+.B-exp {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.B-exp:hover {
+  background-color: #0056b3;
+}
+
+
+/* a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+} */
+
+.student-question {
+  margin-top: 20px;
+}
+
+.student-question h2 {
+  margin-bottom: 10px;
+}
+
+.education-options {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.education-options h2 {
+  margin-bottom: 10px;
+}
+
+.education-options p {
+  margin-bottom: 20px;
+}

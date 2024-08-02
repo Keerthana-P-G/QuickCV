@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Interns.css'; 
 
-
 const Intern = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -42,4 +41,3 @@ const Intern = () => {
 };
 
 export default Intern;
- 

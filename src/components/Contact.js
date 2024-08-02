@@ -15,9 +15,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { email, message } = formData;
+    const { email, firstName, lastName, message } = formData;
     const subject = 'Contact Form Message'; // You can customize the subject
-    const body = `\nMessage/Queries:\n${message}`;
+    const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage/Queries:\n${message}`;
     
     // Encode the subject and body
     const encodedSubject = encodeURIComponent(subject);
@@ -88,7 +88,7 @@ const Contact = () => {
               required
             />
           </div>
-          <button type="submit" className='button-con'>Send Message</button>
+          <button type="submit" className="button-con">Send Message</button>
         </form>
       </div>
     </div>
