@@ -51,7 +51,7 @@ function PersonalDetailsForm() {
   return (
     <div className="personal-details-container">
       <div className="personal-details-page">
-        <h1>Personal Details</h1>
+        <h1>PERSONAL DETAILS</h1>
         {/* <p>Provide your personal details below.</p> */}
         <form onSubmit={(e) => e.preventDefault()} className="personal-form">
           <div className="form-column">

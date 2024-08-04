@@ -1,22 +1,20 @@
 /* Container for the project form */
-
-.procontainer{
+.procontainer {
   background-image: url("details6.avif"); /* Add your image URL here */
   background-size: cover;
   background-position: center;
-  /* height: 100vh; */
-  /* height: calc(100vh - px); */
-  padding-top: 1px; 
-  padding-bottom: 5px; 
-    box-sizing: border-box; 
+  padding-top: 1px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
 }
+
 .project-container {
   padding: 20px;
   max-width: 800px;
   margin: 50px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #ddd;
- /* Optional: adds a shadow for better visual separation */
+  background-color: #ddd; /* Background color */
+  border-radius: 8px; /* Optional: adds rounded corners */
 }
 
 /* Title of the form */
@@ -26,14 +24,14 @@
   color: #333;
 }
 
-/* Form styling with older grid layout */
+/* Form styling with grid layout */
 .project-form {
   display: grid;
   grid-template-columns: 1fr; /* Single column layout */
   gap: 15px;
 }
 
-/* Form group styling with grid layout */
+/* Form group styling */
 .form-group {
   display: grid;
   grid-template-columns: 1fr;
@@ -62,7 +60,7 @@ textarea {
   margin-top: 10px;
 }
 
-/* Button container styling with older grid layout */
+/* Button container styling */
 .button-container {
   margin-top: 20px;
   display: grid;
@@ -95,3 +93,49 @@ textarea {
 .submit:hover, .view-list-button:hover {
   opacity: 0.9; /* Slightly transparent on hover */
 }
+
+/* Project details grid */
+.project-details-grid {
+  display: grid;
+  padding-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-detail-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail-item .detail-info {
+  margin-bottom: 10px;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-button,
+.delete-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button,
+.delete-button {
+  background-color: #2196F3;
+}
+
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #1976D2;
+}
+

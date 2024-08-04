@@ -22,9 +22,10 @@
     margin: 0;
   }
   
-  .contact-header h1 {
+  .con-heading {
     font-size: 36px;
     margin: 10px 0;
+    color: #ddd;
   }
   
   .contact-description {

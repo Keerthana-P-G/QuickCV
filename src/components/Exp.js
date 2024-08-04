@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 import './Exp.css';
 
 function Exp() {
@@ -17,7 +17,7 @@ function Exp() {
   return (
     <div className="Exp">
       <header className="Exp-header">
-        <h1>How long have you been working?</h1>
+        <h1 className='exp-header-xx'>How long have you been working?</h1>
         <p>We'll find the best templates for your experience level.</p>
         <div >
           <button className='B-exp' onClick={handleNoExperienceClick} >No Experience</button>

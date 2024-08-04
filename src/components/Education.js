@@ -90,15 +90,6 @@ const Education = ({ onAddEducationDetail }) => {
               />
             </label>
             <label className="form-label">
-              School Education:
-              <input
-                type="text"
-                value={schoolEducation}
-                onChange={(e) => setSchoolEducation(e.target.value)}
-                required
-              />
-            </label>
-            <label className="form-label">
               College Name:
               <input
                 type="text"
@@ -107,23 +98,6 @@ const Education = ({ onAddEducationDetail }) => {
                 required
               />
             </label>
-            <label className="form-label">
-              Degree:
-              <select
-                value={degree}
-                onChange={(e) => setDegree(e.target.value)}
-                required
-              >
-                <option value="">Select Degree</option>
-                <option value="High School">High School</option>
-                <option value="Associate's Degree">Associate's Degree</option>
-                <option value="Bachelor's Degree">Bachelor's Degree</option>
-                <option value="Master's Degree">Master's Degree</option>
-                <option value="Doctorate">Doctorate</option>
-              </select>
-            </label>
-          </div>
-          <div className="form-column">
             <label className="form-label">
               Field of Study:
               <input
@@ -142,6 +116,33 @@ const Education = ({ onAddEducationDetail }) => {
                 placeholder="0.0"
               />
             </label>
+          </div>
+          <div className="form-column">
+          <label className="form-label">
+              School Education:
+              <input
+                type="text"
+                value={schoolEducation}
+                onChange={(e) => setSchoolEducation(e.target.value)}
+                required
+              />
+            </label>
+            <label className="form-label">
+              Degree:
+              <select
+                value={degree}
+                onChange={(e) => setDegree(e.target.value)}
+                required
+              >
+                <option value="">Select Degree</option>
+                <option value="High School">High School</option>
+                <option value="Associate's Degree">Associate's Degree</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="Doctorate">Doctorate</option>
+              </select>
+            </label>
+           
             <label className="form-label">
               Honors/Awards:
               <input

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './InternDetails.css'; 
+import './InternDetails.css';
 
-const InternDetails = ({ onAddInternDetail }) => {
+const InternDetails = () => {
   const [companyName, setCompanyName] = useState('');
   const [location, setLocation] = useState('');
   const [topic, setTopic] = useState('');
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [details, setDetails] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,22 +19,41 @@ const InternDetails = ({ onAddInternDetail }) => {
       return;
     }
 
-    onAddInternDetail({ companyName, location, topic, fromDate, toDate });
+    if (editIndex !== null) {
+      const updatedDetails = details.map((detail, index) =>
+        index === editIndex ? { companyName, location, topic, fromDate, toDate } : detail
+      );
+      setDetails(updatedDetails);
+      setEditIndex(null);
+    } else {
+      setDetails([...details, { companyName, location, topic, fromDate, toDate }]);
+    }
 
-    // Clear form fields after submission
     setCompanyName('');
     setLocation('');
     setTopic('');
     setFromDate('');
     setToDate('');
+  };
 
-    // Mark as submitted
-    setSubmitted(true);
+  const handleEdit = (index) => {
+    const detail = details[index];
+    setCompanyName(detail.companyName);
+    setLocation(detail.location);
+    setTopic(detail.topic);
+    setFromDate(detail.fromDate);
+    setToDate(detail.toDate);
+    setEditIndex(index);
+  };
+
+  const handleDelete = (index) => {
+    const updatedDetails = details.filter((_, i) => i !== index);
+    setDetails(updatedDetails);
   };
 
   return (
     <div className="intern-details-container">
-      <h1>DETAILS OF INTERNSHIP</h1>
+      <h1 className='int-heading'>DETAILS OF INTERNSHIP</h1>
       <form onSubmit={handleSubmit} className="intern-form">
         <label>
           Company Name:
@@ -81,14 +101,34 @@ const InternDetails = ({ onAddInternDetail }) => {
           />
         </label>
         <div className="button-container-i">
-          <button type="submit" className="add-button">Add</button>
-          
-            <Link to="/intern-detail-list">
-              <button type="button" className="view-list-button">View Intern Details List</button>
-            </Link>
-          
+          <button type="submit" className="add-button">{editIndex !== null ? 'Update' : 'Add'}</button>
+          <Link to="/project">
+            <button type="button" className="next-button">Next</button>
+          </Link>
         </div>
       </form>
+
+      <div className="intern-detail-list">
+        {details.length > 0 ? (
+          details.map((detail, index) => (
+            <div key={index} className="intern-detail-item">
+              <div className="detail-info">
+                <strong>Company Name:</strong> {detail.companyName}<br />
+                <strong>Location:</strong> {detail.location}<br />
+                <strong>Topic:</strong> {detail.topic}<br />
+                <strong>From:</strong> {detail.fromDate}<br />
+                <strong>To:</strong> {detail.toDate}
+              </div>
+              <div className="detail-actions">
+                <button className="edit-button" onClick={() => handleEdit(index)}>Edit</button>
+                <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No internship details available. Please add some details.</p>
+        )}
+      </div>
     </div>
   );
 };

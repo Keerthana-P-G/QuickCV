@@ -42,7 +42,7 @@ const Contact = () => {
     <div className="contact-page">
       <div className="contact-header">
         <p className="contact-subtitle">GOT A QUESTION?</p>
-        <h1>Contact QuickCV</h1>
+        <h1 className='con-heading'>Contact QuickCV</h1>
         <p className="contact-description">
           We’re here to help and answer any question you might have. We look forward to hearing from you. 😊
         </p>

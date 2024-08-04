@@ -7,7 +7,9 @@
   height: calc(100vh - 75px);
   background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
 }
-
+.exp-header-xx{
+  color: #ddd;
+}
 .Exp-header {
   flex: 1;
   display: flex;
