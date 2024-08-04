@@ -1,7 +1,7 @@
 .skills-interest-container {
   padding: 20px;
   max-width: 800px;
-  margin: auto;
+  margin: 20px auto; /* Added margin to ensure the div doesn't touch the screen edges */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #ddd;
@@ -51,11 +51,11 @@
   color: #555;
 }
 
-.form-group {
+.form-group-si {
   margin-bottom: 10px;
 }
 
-.form-group label {
+.form-group-si label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
@@ -63,32 +63,13 @@
   margin-left: 10px;
 }
 
-.form-group input {
+.form-group-si input {
   width: 80%;
   padding: 7px;
   margin-left: 10px;
   border: 1px solid #ddd;
   border-radius: 3px;
 }
-/* 
-.submit-button-SI {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.submit-button-SI {
-  background-color: #4CAF50; 
-  color: white;
-}
-
-.submit-button-SI:hover {
-  opacity: 0.9; 
-} */
-
 
 .button-container-SI {
   display: flex;
@@ -121,4 +102,54 @@
 /* Button hover effects */
 .submit-button-SI:hover, .download-button-SI:hover {
   opacity: 0.9; /* Slightly transparent on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+  .skills-interest-container{
+    margin:20px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+  }
+
+  .form-group-si input {
+    width: 90%; /* Full width input fields on small screens */
+  }
+
+  .button-container-SI {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    gap: 10px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .skills-interest-container{
+    margin:20px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr; /* Two-column layout on medium screens */
+  }
+
+  .form-group-si input {
+    width: 90%; /* Slightly narrower input fields on medium screens */
+  }
+
+  .button-container-SI {
+    flex-direction: row; /* Horizontal buttons layout */
+  }
+}
+
+@media (min-width: 901px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr; /* Two-column layout on large screens */
+  }
+
+  .form-group-si input {
+    width: 80%; /* Original width input fields on large screens */
+  }
+
+  .button-container-SI {
+    flex-direction: row; /* Horizontal buttons layout */
+  }
 }

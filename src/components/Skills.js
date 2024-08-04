@@ -51,7 +51,7 @@ const Skills = () => {
             <div className="skills-grid">
               <h2>Skills</h2>
               {skills.map((skill, index) => (
-                <div key={index} className="form-group">
+                <div key={index} className="form-group-si">
                   <label htmlFor={`skill-${index}`}>{`Skill ${index + 1}`}</label>
                   <input
                     type="text"
@@ -65,7 +65,7 @@ const Skills = () => {
             <div className="interests-grid">
               <h2>Interests</h2>
               {interests.map((interest, index) => (
-                <div key={index} className="form-group">
+                <div key={index} className="form-group-si">
                   <label htmlFor={`interest-${index}`}>{`Interest ${index + 1}`}</label>
                   <input
                     type="text"

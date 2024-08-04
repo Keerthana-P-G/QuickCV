@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 
+/* Main container with padding to prevent touching screen edges */
 .project-container {
   padding: 20px;
   max-width: 800px;
@@ -43,14 +44,23 @@ label {
   font-weight: bold;
 }
 
-input, textarea {
+/* Input and textarea styling */
+.form-group input{
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  width: 90%;
+
+} .form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 90%; /* Full width by default */
 }
 
-textarea {
+.form-group textarea {
   resize: none; /* Prevent resizing */
 }
 
@@ -133,9 +143,93 @@ textarea {
   background-color: #2196F3;
 }
 
-
 .edit-button:hover,
 .delete-button:hover {
   background-color: #1976D2;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+  .project-container {
+    margin: 20px;
+  }
+
+  .button-container {
+    grid-template-columns: 1fr;
+  }
+
+  .submit, .view-list-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .project-details-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Specific styles for input boxes on smaller screens */
+  .form-group input[name="project-name"],
+  .form-group input[name="tools-used"] {
+    max-width: 90%; /* Full width on small screens */
+  }
+
+  .form-group input[name="project-name"] {
+    width: 50%; /* Full width */
+  }
+
+  .form-group input[name="tools-used"] {
+    width: 50%; /* Full width */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .project-container {
+    margin: 30px;
+  }
+
+  .submit, .view-list-button {
+    font-size: 15px;
+    padding: 9px 18px;
+  }
+
+  .project-details-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Specific styles for input boxes on medium screens */
+  .form-group input[name="project-name"],
+  .form-group input[name="tools-used"] {
+    max-width: 90%; /* Full width */
+  }
+
+  .form-group input[name="project-name"] {
+    width: 50%; /* Full width */
+  }
+
+  .form-group input[name="tools-used"] {
+    width: 50%; /* Full width */
+  }
+}
+
+@media (min-width: 901px) {
+  .project-container {
+    margin: 50px auto;
+  }
+
+  .submit, .view-list-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .project-details-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  /* Specific styles for input boxes on larger screens */
+  .form-group input[name="project-name"],
+  .form-group input[name="tools-used"] {
+    width: 60%; /* Default width for larger screens */
+    max-width: 100%; /* Ensure it doesn’t exceed container width */
+  }
+}

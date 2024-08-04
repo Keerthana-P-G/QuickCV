@@ -1,10 +1,12 @@
+/* Base styles */
 .about-h1 {
   margin-bottom: 40px;
   font-size: 40px;
   font-weight: bold;
   color: #333;
-  text-align: center ;
+  text-align: center;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,19 +15,17 @@
   padding: 20px;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
-   min-height: 100vh; 
+  min-height: 100vh;
 }
 
 .carousel-section {
   width: 100%;
   max-width: 1200px;
-  /* height: 100px; */
-
 }
 
 .carousel .slide-content {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   padding: 20px;
   background: #fff;
@@ -39,7 +39,8 @@
 
 .carousel .slide-image img {
   width: 100%;
-  height: 500px;
+  height: auto; /* Adjust height to maintain aspect ratio */
+  max-height: 500px; /* Prevent image from getting too large */
   border-radius: 10px;
 }
 
@@ -47,7 +48,6 @@
   flex: 1;
   padding: 20px;
   text-align: left;
-  
 }
 
 .carousel .slide-text h2 {
@@ -77,4 +77,64 @@
   color: #222;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens up to 768px (Tablets and below) */
+@media (max-width: 768px) {
+  .about-h1 {
+    font-size: 32px; /* Smaller heading on tablets */
+    margin-bottom: 30px; /* Reduced margin */
+  }
+
+  .carousel .slide-content {
+    flex-direction: column; /* Stack image and text vertically */
+  }
+
+  .carousel .slide-image img {
+    height: auto; /* Maintain aspect ratio on smaller screens */
+    max-height: 300px; /* Reduce max-height for smaller screens */
+  }
+
+  .carousel .slide-text h2 {
+    font-size: 20px; /* Smaller heading */
+  }
+
+  .carousel .slide-text p, .carousel .slide-text ul {
+    font-size: 14px; /* Smaller text */
+  }
+
+  .about-bold {
+    font-size: 18px; /* Smaller bold text */
+  }
+}
+
+/* For screens up to 480px (Phones and below) */
+@media (max-width: 480px) {
+  .about-h1 {
+    font-size: 24px; /* Even smaller heading */
+    margin-bottom: 20px; /* Further reduced margin */
+  }
+
+  .carousel .slide-content {
+    padding: 10px; /* Smaller padding */
+  }
+
+  .carousel .slide-image img {
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Further reduce max-height */
+  }
+
+  .carousel .slide-text h2 {
+    font-size: 18px; /* Smaller heading */
+  }
+
+  .carousel .slide-text p, .carousel .slide-text ul {
+    font-size: 12px; /* Smaller text */
+  }
+
+  .about-bold {
+    font-size: 16px; /* Smaller bold text */
+  }
 }

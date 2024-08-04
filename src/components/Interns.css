@@ -5,29 +5,32 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  /* margin: 0 20px; */
   background-image: url("details6.avif"); /* Add your image URL here */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: calc(100vh - 75px);
+  padding: 10px; /* Add padding for smaller screens */
 }
 
 .content-box {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  width: 800px;
-  height: 300px;
+  width: 90%; /* Adjust width for responsiveness */
+  max-width: 800px; /* Set a maximum width */
+  height: auto; /* Adjust height for content */
   background-color: rgba(255, 255, 255, 0.9); /* Add transparency to see the background */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin: 20px 0; /* Add margin for spacing */
 }
 
 .question h1 {
   color: black;
+  font-size: 24px; /* Adjust font size for responsiveness */
 }
 
 .question {
@@ -36,27 +39,24 @@
 
 .button-group {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically for smaller screens */
+  align-items: center; /* Center buttons */
 }
 
 .button {
-  padding: 20px 40px;
-  margin: 0 10px;
+  padding: 15px 30px; /* Adjust padding for responsiveness */
+  margin: 10px 0; /* Adjust margin for spacing */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 16px; /* Adjust font size for responsiveness */
 }
 
-.yes-button {
+.yes-button, .no-button {
   background-color: #5a6e9e;
   color: white;
-  font-size: 18px;
-}
-
-.no-button {
-  background-color: #5a6e9e;
-  color: white;
-  font-size: 18px;
 }
 
 .button:focus {
@@ -69,12 +69,42 @@
   background-color: transparent;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px; /* Adjust font size for responsiveness */
   transition: all 0.3s ease;
-  margin-left: 670px;
-  margin-bottom: 50px;
+  margin: 20px 0; /* Adjust margin for spacing */
 }
 
 .next-button-intern:hover {
   background-color: #5a6e9e;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 600px) {
+  .button-group {
+    flex-direction: row; /* Arrange buttons in a row for larger screens */
+    margin-bottom: 20px;
+    justify-content: center; /* Center buttons */
+  }
+
+  .button {
+    margin: 0 10px; /* Adjust margin for spacing */
+  }
+
+  .next-button-intern {
+    margin-left: auto; /* Align button to the right */
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .button {
+    padding: 20px 40px; /* Increase padding for larger screens */
+    font-size: 18px; /* Increase font size for larger screens */
+  }
+
+  .next-button-intern {
+    padding: 15px 30px; /* Increase padding for larger screens */
+    font-size: 18px; /* Increase font size for larger screens */
+  }
 }

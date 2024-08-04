@@ -3,13 +3,17 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
-  height: calc(100vh - 75px);
+  /* height: calc(100vh - 75px); */
   background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
+  background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
 }
-.exp-header-xx{
+
+.exp-header-xx {
   color: #ddd;
 }
+
 .Exp-header {
   flex: 1;
   display: flex;
@@ -17,22 +21,25 @@
   align-items: center;
   justify-content: center;
 }
-.Exp-header p,h2{
+
+.Exp-header p, .Exp-header h2 {
   color: white;
 }
+
 .Exp-footer {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  flex-wrap: wrap; /* Allow wrapping of buttons */
 }
 
 .buttons-container-ex {
-  justify-content: center;
   display: flex;
   gap: 10px;
   margin-top: 20px;
- 
+  flex-wrap: wrap; /* Allow wrapping of buttons */
+  justify-content: center; /* Center the buttons */
 }
 
 .B-exp {
@@ -43,21 +50,13 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  margin: 10px 0; /* Add margin to buttons */
+  width: auto; /* Ensure width is auto by default */
 }
 
 .B-exp:hover {
   background-color: #0056b3;
 }
-
-
-/* a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-} */
 
 .student-question {
   margin-top: 20px;
@@ -78,4 +77,106 @@ a:hover {
 
 .education-options p {
   margin-bottom: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .Exp {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
+  .Exp-footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .buttons-container-ex {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .B-exp {
+    width: 60%; /* Full width on smaller screens */
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 5px 0; /* Add margin to buttons */
+  }
+
+  .Exp-header p, .Exp-header h2 {
+    font-size: 18px;
+  }
+
+  .education-options h2, .student-question h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .Exp {
+    padding: 20px;
+    min-height: 100vh;
+
+  }
+
+  .Exp-footer {
+    flex-direction: row;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .buttons-container-ex {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .B-exp {
+    width: 60%; /* Default width for medium screens */
+    font-size: 15px;
+    padding: 9px 18px;
+    margin: 5px 0; /* Add margin to buttons */
+  }
+
+  .Exp-header p, .Exp-header h2 {
+    font-size: 20px;
+  }
+
+  .education-options h2, .student-question h2 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 901px) {
+  .Exp {
+    padding: 30px;
+    min-height: 100vh;
+
+  }
+
+  .Exp-footer {
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .buttons-container-ex {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .B-exp {
+    width: auto; /* Default width for larger screens */
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px 0; /* Add margin to buttons */
+  }
+
+  .Exp-header p, .Exp-header h2 {
+    font-size: 24px;
+  }
+
+  .education-options h2, .student-question h2 {
+    font-size: 24px;
+  }
 }

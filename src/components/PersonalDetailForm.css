@@ -1,34 +1,33 @@
+/* Container for personal details */
 .personal-details-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   padding: 20px;
   background-color: white;
   background-image: url("details2.avif");
   background-size: cover; /* Ensure the image covers the entire background */
   background-position: center;
-  height: calc(100vh - 115px); /* Center the image */
+  height: calc(100vh - 75px); 
+  box-sizing: border-box;
 }
 
-.personal-details-page h1 {
-  margin-bottom: 20px;
-  width: 100%;
-  color: white;
-}
-
+/* Header and text styling */
+.personal-details-page h1, 
 .personal-details-page p {
   margin-bottom: 20px;
-  width: 100%;
   color: white;
+  text-align: center;
+  width: 100%;
 }
 
+/* Form styling with grid layout */
 .personal-form {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two columns */
-  grid-gap: 40px; /* Gap between columns and rows */
-  width: 400%;
+  grid-gap: 20px; /* Reduced gap for smaller screens */
+  width: 100%; /* Full width of container */
   max-width: 1000px; /* Maximum width of the form */
   background-color: whitesmoke; /* Semi-transparent white background */
   padding: 20px;
@@ -36,15 +35,16 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  margin-right: 400px; /* Include padding and border in element's total width and height */
 }
 
+/* Columns within the form */
 .form-column {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Gap between form elements within each column */
+  gap: 20px; /* Adjusted for smaller screens */
 }
 
+/* Label and input styling */
 .form-label {
   display: flex;
   flex-direction: column;
@@ -53,43 +53,111 @@
 
 .form-label input {
   padding: 10px;
-  margin-top: 5px;
   border: 1px solid black;
   border-radius: 5px;
   color: black;
+  font-size: 14px; /* Adjusted font size */
 }
 
+/* Error message styling */
 .error-message {
-  color: black; /* Color of validation error messages */
-  font-size: 12px; /* Adjust font size if needed */
+  color: black;
+  font-size: 12px; /* Adjusted font size */
   margin-top: 5px;
 }
 
+/* Button group styling */
 .button-group {
   display: flex;
-  justify-content: center;
-  grid-column: 1 / -1; /* Span across both columns */
+  flex-direction: column; /* Stack buttons vertically on smaller screens */
+  align-items: center;
   margin-top: 20px;
+  gap: 10px; /* Space between buttons */
 }
 
+/* Button styling */
 .bbb {
   background-color: #2196f3;
   color: white;
   border: none;
-  padding: 15px 10px; /* Reduced padding */
-  margin-bottom: 15px;
+  padding: 10px 50px; 
   border-radius: 5px;
-  font-size: 12px; /* Reduced font size */
+  font-size: 14px; /* Adjusted font size */
   cursor: pointer;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 200px; /* Max width for large screens */
+  text-align: center;
 }
 
+/* Center button for larger screens */
+.button-group .bbb {
+  margin: 0 auto; /* Center the button */
+}
+
+/* Button disabled state */
 .bbb:disabled {
-  background-color: #ccc; /* Grey background for disabled state */
-  cursor: not-allowed; /* Not-allowed cursor for disabled state */
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
+/* Disabled link styling */
 .disabled-link {
   pointer-events: none;
   color: grey;
   cursor: not-allowed;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .personal-details-container {
+    height: auto;
+    min-height: 100vh; /* Adjust height for very small screens */
+    padding: 10px;
+  }
+
+  .personal-form {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 10px; /* Reduced gap */
+    width: 100%; /* Full width of container */
+    margin: 0 10px; /* Add some margin to avoid touching screen edges */
+  }
+
+  .form-column {
+    gap: 15px; /* Adjusted for smaller screens */
+  }
+
+  .bbb {
+    padding: 8px 16px; /* Smaller padding */
+    font-size: 12px; /* Smaller font size */
+    max-width: none; /* Remove max-width constraint */
+  }
+}
+
+@media (max-width: 480px) {
+  .personal-details-container {
+    height: auto;
+    min-height: 100vh; /* Adjust height for very small screens */
+    padding: 10px;
+  }
+
+  .personal-form {
+    padding: 10px;
+  }
+
+  .bbb {
+    padding: 6px 12px; /* Even smaller padding */
+    font-size: 10px; /* Even smaller font size */
+  }
+}
+
+@media (min-width: 900px) {
+  .button-group {
+    flex-direction: row; /* Arrange buttons in a row on larger screens */
+    justify-content: center; /* Center the buttons */
+  }
+
+  .bbb {
+    padding: 12px 24px; /* Adjusted padding for larger screens */
+    font-size: 16px; /* Adjusted font size for larger screens */
+  }
 }
