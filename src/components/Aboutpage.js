@@ -2,14 +2,14 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './AboutPage.css'; 
-import logo from './logo.jpg'; // Import your image
+import logo from './logo.jpg';
 
 const AboutPage = () => {
   return (
     <div className='container'>
       {/* <h1 className="about-h1">About us</h1> */}
       <section className='carousel-section'>
-        <Carousel showArrows={true} infiniteLoop={true} autoPlay={true} interval={3000} stopOnHover={true}>
+        <Carousel showArrows={true} infiniteLoop={true} autoPlay={true} interval={2000} stopOnHover={true}>
           <div className="slide-content">
             <div className="slide-image">
               <img src={logo} alt="CV Builder" />

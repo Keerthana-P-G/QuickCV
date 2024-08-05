@@ -19,24 +19,20 @@ const Project = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate that all fields are filled
     if (!projectName || !toolsUsed || !description) {
       setError('All fields are required.');
       return;
     }
     
-    // Clear error if validation passes
     setError('');
 
     if (editIndex !== null) {
-      // Update existing project
       const updatedDetails = projectDetails.map((detail, index) =>
         index === editIndex ? { projectName, toolsUsed, description } : detail
       );
       setProjectDetails(updatedDetails);
       setEditIndex(null);
     } else {
-      // Add new project
       const newProjectDetail = {
         projectName,
         toolsUsed,
@@ -45,12 +41,10 @@ const Project = () => {
       setProjectDetails([...projectDetails, newProjectDetail]);
     }
 
-    // Clear form fields after submission
     setProjectName('');
     setToolsUsed('');
     setDescription('');
 
-    // Mark as submitted
     setSubmitted(true);
   };
 
@@ -84,7 +78,6 @@ const Project = () => {
       description: '',
     });
 
-    // Clear form fields after submission
     setProjectName('');
     setToolsUsed('');
     setDescription('');

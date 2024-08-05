@@ -1,83 +1,78 @@
-/* Navbar.css */
-
-/* Base styles */
 .navbar-header {
   display: flex;
   align-items: center;
 }
 
 .navbar-logo {
-  width: 76px; /* Adjust the size as needed */
+  width: 76px;
   height: auto;
-  margin-right: 10px; /* Space between the logo and the text */
+  margin-right: 10px;
 }
 
 .navbar-brand {
   margin: 0;
   padding: 0;
-  font-size: 24px; /* Adjust the font size as needed */
+  font-size: 24px;
 }
 
 nav {
-  position: fixed; /* Fixes the navbar to the top of the page */
-  top: 0; /* Aligns the navbar to the very top */
-  left: 0; /* Aligns the navbar to the left */
-  z-index: 500; /* Ensures the navbar is above other content */
-  width: 100%; /* Full width of the viewport */
-  background-color: #e4e6e5; /* Background color for the navbar */
-  border-bottom: 1px solid #ccc; /* Border for the bottom of the navbar */
-  height: 75px; /* Height of the navbar */
-  display: flex; /* Flexbox layout */
-  justify-content: space-between; /* Align items to the right */
-  align-items: center; /* Vertically center the items */
-  padding: 0 20px; /* Padding for left and right */
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
-  white-space: nowrap; /* Prevent items from wrapping to the next line */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  width: 100%;
+  background-color: #e4e6e5;
+  border-bottom: 1px solid #ccc;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 ul {
-  list-style-type: none; /* Remove default list style */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  display: flex; /* Flexbox layout for list items */
-  align-items: center; /* Vertically center the list items */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 li {
-  margin-right: 20px; /* Space between the list items */
+  margin-right: 20px;
 }
 
 a {
-  text-decoration: none; /* Remove underline from links */
-  color: black; /* Default link color */
-  font-size: 18px; /* Font size for links */
-  padding: 10px 15px; /* Padding inside the links */
-  border-radius: 5px; /* Rounded corners for links */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and color */
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Button styles */
 .navbar-button {
-  background-color: navy; /* Button background color */
-  color: white; /* Button text color */
-  font-size: 18px; /* Font size for button */
-  padding: 10px 15px; /* Padding inside the button */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners for button */
-  cursor: pointer; /* Cursor pointer for button */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background color and color */
+  background-color: navy;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-button:hover {
-  background-color: #f0f0f0; /* Background color on hover */
-  color: navy; /* Text color on hover */
+  background-color: #f0f0f0;
+  color: navy;
 }
 
 .navbar-button:active {
-  background-color: #ddd; /* Background color when active/clicked */
+  background-color: #ddd;
 }
 
-/* Additional styles */
 .navbar-brand {
   color: #333232;
   font-size: 24px;
@@ -87,13 +82,11 @@ a {
   margin: 0;
 }
 
-/* Adjustments for content below the navbar */
 body {
-  margin: 0; /* Remove default margin */
-  padding-top: 75px; /* Add padding-top to prevent content from overlapping the navbar */
+  margin: 0;
+  padding-top: 75px;
 }
 
-/* Specific colors for each link */
 .nav-link-home,
 .nav-link-login,
 .nav-link-contact,
@@ -101,68 +94,64 @@ body {
   color: black;
 }
 
-/* Media Queries for responsiveness */
-
-/* For screens up to 768px (Tablets and below) */
 @media (max-width: 768px) {
   .navbar-brand {
-    font-size: 20px; /* Smaller font size for brand */
+    font-size: 20px;
   }
 
   nav {
-    flex-direction: column; /* Stack items vertically */
-    height: auto; /* Allow height to adjust based on content */
-    padding: 10px; /* Reduced padding */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   ul {
-    flex-direction: row; /* Keep items in a row */
-    align-items: center; /* Align items in the center */
+    flex-direction: row;
+    align-items: center;
   }
 
   li {
-    margin-bottom: 10px; /* Space between items */
-    margin-right: 10px; /* Reduce right margin */
+    margin-bottom: 10px;
+    margin-right: 10px;
   }
 
   .navbar-button {
-    font-size: 16px; /* Smaller font size for buttons */
-    padding: 8px 12px; /* Smaller padding */
+    font-size: 16px;
+    padding: 8px 12px;
   }
 
   .navbar-logo {
-    width: 60px; /* Smaller logo size */
+    width: 60px;
   }
 }
 
-/* For screens up to 480px (Phones and below) */
 @media (max-width: 480px) {
   .navbar-brand {
-    font-size: 18px; /* Even smaller font size for brand */
+    font-size: 18px;
   }
 
   nav {
-    padding: 5px; /* Further reduced padding */
+    padding: 5px;
   }
 
   ul {
-    flex-direction: row; /* Keep items in a row */
-    align-items: center; /* Align items in the center */
+    flex-direction: row;
+    align-items: center;
   }
 
   li {
-    margin-bottom: 8px; /* Further reduced margin */
-    margin-right: 8px; /* Further reduced right margin */
+    margin-bottom: 8px;
+    margin-right: 8px;
   }
 
   .navbar-button {
-    font-size: 14px; /* Even smaller font size for buttons */
-    padding: 6px 10px; /* Smaller padding */
+    font-size: 14px;
+    padding: 6px 10px;
   }
 
   .navbar-logo {
-    width: 50px; /* Even smaller logo size */
+    width: 50px;
   }
 }

@@ -1,4 +1,3 @@
-/* Base styles */
 .contact-page {
   display: flex;
   flex-direction: column;
@@ -81,23 +80,20 @@
   background-color: #0056b3;
 }
 
-/* Media Queries for responsiveness */
 
-/* For screens up to 768px (Tablets and below) */
 @media (max-width: 768px) {
   .contact-page {
     padding: 10px;
-    min-height: 100vh; /* Adjust height for very small screens */
+    min-height: 100vh; 
   }
 
 }
 
 
-/* For screens up to 480px (Phones and below) */
 @media (max-width: 480px) {
   .contact-page {
     padding: 10px;
-    min-height: 100vh; /* Adjust height for very small screens */
+    min-height: 100vh; 
   }
 
 }

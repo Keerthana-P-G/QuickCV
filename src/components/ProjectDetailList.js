@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ProjectDetailList.css'; // Import CSS file
+import './ProjectDetailList.css'; 
 
 const ProjectDetailList = ({ projectDetails, onAddAnother }) => {
   return (

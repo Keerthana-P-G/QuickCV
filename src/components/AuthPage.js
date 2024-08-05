@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Auth.css';
 
 const AuthPage = () => {
@@ -19,8 +19,6 @@ const AuthPage = () => {
     email: ''
   });
 
-  const navigate = useNavigate();
-
   const isEmailValid = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -33,7 +31,7 @@ const AuthPage = () => {
       errors.username = 'Username must be at least 5 characters.';
     }
 
-    if (password.trim() === '' || password.length < 8) {
+    if (password.trim() === '' || password.length < 5) {
       errors.password = 'Password must be at least 8 characters.';
     }
 
@@ -50,11 +48,11 @@ const AuthPage = () => {
     }
   };
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
     if (loginUsername.length >= 5 && loginPassword.length >= 8) {
       setLoginError('');
-      navigate('/');
     } else {
+      e.preventDefault();
       setLoginError('Invalid credentials. Please try again.');
     }
   };
@@ -97,6 +95,7 @@ const AuthPage = () => {
               type="text"
               value={loginUsername}
               onChange={(e) => setLoginUsername(e.target.value)}
+              required
             />
           </label>
           <br />
@@ -107,11 +106,14 @@ const AuthPage = () => {
               type="password"
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
+              required
             />
           </label>
           <br />
           {loginError && <p className="auth-error">{loginError}</p>}
-          <button className="auth-button" onClick={handleLogin}>Log In</button>
+          <Link to="/" className="auth-button" onClick={handleLogin}>
+            Log In
+          </Link>
           <p>Don't have an account? <button className='auth-button' onClick={togglePage}>Sign Up</button></p>
         </div>
       ) : (

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './InternDetailList.css'; // Import CSS file
+import './InternDetailList.css'; 
 
 const InternDetailList = () => {
   const [internDetails, setInternDetails] = useState([]);
@@ -11,8 +11,6 @@ const InternDetailList = () => {
   };
 
   const handleEdit = (index) => {
-    // Logic to handle editing an intern detail
-    // You can implement the logic here to edit the detail
   };
 
   return (

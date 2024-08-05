@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import './Education.css'; // Adjust the CSS file name accordingly
+import { Link } from 'react-router-dom'; 
+import './Education.css';
 
 const Education = ({ onAddEducationDetail }) => {
   const [schoolName, setSchoolName] = useState('');
@@ -16,14 +16,12 @@ const Education = ({ onAddEducationDetail }) => {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
-    // Check if all required fields are filled
     const isValid = schoolName && schoolEducation && degree && collegeName && fieldOfStudy && graduationMonth && graduationYear;
     setIsFormValid(isValid);
   }, [schoolName, schoolEducation, degree, collegeName, fieldOfStudy, graduationMonth, graduationYear]);
 
   const handleGpaChange = (e) => {
     const value = e.target.value;
-    // Allow only numbers with up to one decimal place and no more than 10
     if (/^\d*\.?\d{0,1}$/.test(value) && (value === '' || parseFloat(value) <= 10)) {
       setGpa(value);
     }

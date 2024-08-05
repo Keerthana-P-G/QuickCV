@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
-import logo from './logo.jpg'; // Correct the path to your image file
+import logo from './logo.jpg';
 
 const Nav = () => {
   return (

@@ -1,47 +1,45 @@
 .education-details-container {
   background-image: url("details10.jpg");
-  background-size: cover; /* Ensure the image covers the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  margin: 0; /* Remove default margin */
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  margin: 0; 
   padding: 0;
-  height: calc(100vh - 76px);
+  height: 90vh; 
+  width: 100vw;
+  position: relative; 
+  box-sizing: border-box; 
+}
 
+.edu-header {
+  padding-left: 270px; 
 }
-.edu-header{
-  /* align-self: flex-start; */
-  padding-left: 250px;
-}
+
 .education-details-page {
   background-color: whitesmoke;
-  padding: 30px; 
+  padding: 30px;
   border-radius: 20px;
-  border: 3px solid black; /* Black border for the container */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly increased shadow for better depth */
+  border: 3px solid black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 1000px;
-  margin: auto; 
-  width: 100%;
-  height:490px;
+  margin: auto;
+  width: 90%; 
+  height: auto;
+  box-sizing: border-box; 
 }
 
+
 .spacer {
-  height: 10px; /* Adjust this value to move the heading further down */
+  height: 10px; 
 }
-/* 
-.education-details-container h1 {
-  margin-bottom: 20px; 
-  color:white;
-  text-align: left; 
-  font-size: 24px; 
-  margin-left: 495px;
-} */
+
 
 .education-details-container p {
   margin-bottom: 20px;
-  color:white;
-  text-align: left; /* Align the paragraph to the left */
-  font-size: 18px; /* Increased font size */
-  margin-left: 495px; /* Adjust this value to move the paragraph further left */
+  color: white;
+  text-align: left; 
+  font-size: 18px; 
+  margin-left: 20px; 
 }
 
 .education-form {
@@ -50,34 +48,39 @@
   flex-wrap: wrap;
 }
 
+
 .form-column {
   flex: 1;
   min-width: 280px;
   margin-right: 20px;
+  box-sizing: border-box; 
 }
 
+
 .form-column:last-child {
-  margin-right: 0; /* Remove margin-right for the last column */
+  margin-right: 0;
 }
+
 
 .form-label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px; /* Increased spacing between form elements */
+  margin-bottom: 20px; 
   color: #333;
-  font-size: 16px; /* Increased font size */
+  font-size: 16px;
 }
+
 
 .form-label input,
 .form-label select {
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc; /* Keep input border color */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px; /* Increased font size */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
-  background-color: #f9f9f9; /* Light background color */
-  color: #333; /* Text color */
+  font-size: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; 
+  color: #333; 
 }
 
 .graduation-date {
@@ -85,16 +88,18 @@
   justify-content: space-between;
 }
 
+
 .graduation-date select {
   width: 48%;
-  background-color: #f9f9f9; /* Light background color */
-  color: #333; /* Text color */
-  border: 1px solid #ccc; /* Keep select border color */
+  background-color: #f9f9f9; 
+  color: #333;
+  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  font-size: 16px; /* Increased font size */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+  font-size: 16px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .button-container-e {
   display: flex;
@@ -103,10 +108,11 @@
   width: 100%;
 }
 
+
 .add-button {
   background-color: #4CAF50;
   color: white;
-  padding: 12px 24px; /* Increased padding for better button size */
+  padding: 12px 24px; 
   border: none;
   border-radius: 5px;
   font-size: 17px;
@@ -119,6 +125,53 @@
   cursor: not-allowed;
 }
 
+
 .add-button:not(:disabled):hover {
   background-color: #45a049;
+}
+
+
+@media (max-width: 768px) {
+  .education-details-container {
+    height: auto; 
+    padding: 20px; 
+    width: 100vw;
+  }
+
+  .edu-header {
+    padding-left: 20px; 
+    padding-right: 20px;
+  }
+
+  .education-details-page {
+    padding: 20px;
+    width: 100%; 
+    height: auto; 
+  }
+
+  .form-column {
+    min-width: 100%; 
+    margin-right: 0; 
+    margin-bottom: 20px; 
+  }
+
+  .button-container-e {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .add-button {
+    width: 100%; 
+    max-width: 300px; 
+    padding: 12px; 
+  }
+
+  .graduation-date {
+    flex-direction: column; 
+  }
+
+  .graduation-date select {
+    width: 100%; 
+    margin-bottom: 10px; 
+  }
 }

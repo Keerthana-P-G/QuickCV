@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Skills.css'; // Import CSS file
+import './Skills.css'; 
 
 const Skills = () => {
   const [skills, setSkills] = useState(['', '', '', '', '', '']);
@@ -22,22 +22,18 @@ const Skills = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate that mandatory fields are filled
     if (skills.slice(0, 3).some(skill => !skill) || interests.slice(0, 3).some(interest => !interest)) {
       setError('The first three fields in both Skills and Interests are mandatory.');
       return;
     }
 
     setError('');
-    // Handle form submission logic here
 
-    // Reset the fields to empty strings
     setSkills(['', '', '', '', '', '']);
     setInterests(['', '', '', '', '', '']);
   };
 
   const handleDownloadResume = () => {
-    // Implement resume download logic here
     alert('Downloaded successfully.');
   };
 

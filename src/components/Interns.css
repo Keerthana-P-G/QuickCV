@@ -5,32 +5,31 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-image: url("details6.avif"); /* Add your image URL here */
+  background-image: url("details6.avif"); 
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   height: calc(100vh - 75px);
-  padding: 10px; /* Add padding for smaller screens */
+  padding: 10px;
 }
 
 .content-box {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  width: 90%; /* Adjust width for responsiveness */
-  max-width: 800px; /* Set a maximum width */
-  height: auto; /* Adjust height for content */
-  background-color: rgba(255, 255, 255, 0.9); /* Add transparency to see the background */
+  width: 90%; 
+  max-width: 800px; 
+  height: auto; 
+  background-color: rgba(255, 255, 255, 0.9); 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0; /* Add margin for spacing */
+  margin: 20px 0; 
 }
 
 .question h1 {
   color: black;
-  font-size: 24px; /* Adjust font size for responsiveness */
+  font-size: 24px; 
 }
 
 .question {
@@ -40,18 +39,18 @@
 .button-group {
   margin-bottom: 20px;
   display: flex;
-  flex-direction: column; /* Stack buttons vertically for smaller screens */
-  align-items: center; /* Center buttons */
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .button {
-  padding: 15px 30px; /* Adjust padding for responsiveness */
-  margin: 10px 0; /* Adjust margin for spacing */
+  padding: 15px 30px; 
+  margin: 10px 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px; /* Adjust font size for responsiveness */
+  font-size: 16px; 
 }
 
 .yes-button, .no-button {
@@ -69,29 +68,28 @@
   background-color: transparent;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px; /* Adjust font size for responsiveness */
+  font-size: 16px; 
   transition: all 0.3s ease;
-  margin: 20px 0; /* Adjust margin for spacing */
+  margin: 20px 0; 
 }
 
 .next-button-intern:hover {
   background-color: #5a6e9e;
 }
 
-/* Media Queries for responsiveness */
 @media (min-width: 600px) {
   .button-group {
-    flex-direction: row; /* Arrange buttons in a row for larger screens */
+    flex-direction: row; 
     margin-bottom: 20px;
-    justify-content: center; /* Center buttons */
+    justify-content: center; 
   }
 
   .button {
-    margin: 0 10px; /* Adjust margin for spacing */
+    margin: 0 10px;
   }
 
   .next-button-intern {
-    margin-left: auto; /* Align button to the right */
+    margin-left: auto; 
     margin-right: 0;
     margin-bottom: 50px;
   }
@@ -99,12 +97,12 @@
 
 @media (min-width: 900px) {
   .button {
-    padding: 20px 40px; /* Increase padding for larger screens */
-    font-size: 18px; /* Increase font size for larger screens */
+    padding: 20px 40px; 
+    font-size: 18px; 
   }
 
   .next-button-intern {
-    padding: 15px 30px; /* Increase padding for larger screens */
-    font-size: 18px; /* Increase font size for larger screens */
+    padding: 15px 30px; 
+    font-size: 18px; 
   }
 }

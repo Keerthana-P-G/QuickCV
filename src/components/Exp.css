@@ -1,4 +1,3 @@
-/* src/Exp.css */
 .Exp {
   text-align: center;
   display: flex;
@@ -31,15 +30,15 @@
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  flex-wrap: wrap; /* Allow wrapping of buttons */
+  flex-wrap: wrap; 
 }
 
 .buttons-container-ex {
   display: flex;
   gap: 10px;
   margin-top: 20px;
-  flex-wrap: wrap; /* Allow wrapping of buttons */
-  justify-content: center; /* Center the buttons */
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
 
 .B-exp {
@@ -50,8 +49,8 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin: 10px 0; /* Add margin to buttons */
-  width: auto; /* Ensure width is auto by default */
+  margin: 10px 0; 
+  width: auto;
 }
 
 .B-exp:hover {
@@ -79,7 +78,6 @@
   margin-bottom: 20px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 600px) {
   .Exp {
     padding: 10px;
@@ -98,10 +96,10 @@
   }
 
   .B-exp {
-    width: 60%; /* Full width on smaller screens */
+    width: 60%; 
     font-size: 14px;
     padding: 8px 16px;
-    margin: 5px 0; /* Add margin to buttons */
+    margin: 5px 0;
   }
 
   .Exp-header p, .Exp-header h2 {
@@ -132,10 +130,10 @@
   }
 
   .B-exp {
-    width: 60%; /* Default width for medium screens */
+    width: 60%; 
     font-size: 15px;
     padding: 9px 18px;
-    margin: 5px 0; /* Add margin to buttons */
+    margin: 5px 0; 
   }
 
   .Exp-header p, .Exp-header h2 {
@@ -166,10 +164,10 @@
   }
 
   .B-exp {
-    width: auto; /* Default width for larger screens */
+    width: auto; 
     font-size: 16px;
     padding: 10px 20px;
-    margin: 5px 0; /* Add margin to buttons */
+    margin: 5px 0; 
   }
 
   .Exp-header p, .Exp-header h2 {

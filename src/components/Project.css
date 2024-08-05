@@ -1,6 +1,5 @@
-/* Container for the project form */
 .procontainer {
-  background-image: url("details6.avif"); /* Add your image URL here */
+  background-image: url("details6.avif");
   background-size: cover;
   background-position: center;
   padding-top: 1px;
@@ -8,31 +7,27 @@
   box-sizing: border-box;
 }
 
-/* Main container with padding to prevent touching screen edges */
 .project-container {
   padding: 20px;
   max-width: 800px;
   margin: 50px auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #ddd; /* Background color */
-  border-radius: 8px; /* Optional: adds rounded corners */
+  background-color: #ddd; 
+  border-radius: 8px; 
 }
 
-/* Title of the form */
 .project-container h1 {
   margin-top: 10px;
   font-size: 24px;
   color: #333;
 }
 
-/* Form styling with grid layout */
 .project-form {
   display: grid;
-  grid-template-columns: 1fr; /* Single column layout */
+  grid-template-columns: 1fr;
   gap: 15px;
 }
 
-/* Form group styling */
 .form-group {
   display: grid;
   grid-template-columns: 1fr;
@@ -44,7 +39,6 @@ label {
   font-weight: bold;
 }
 
-/* Input and textarea styling */
 .form-group input{
   padding: 10px;
   border: 1px solid #ddd;
@@ -57,28 +51,25 @@ label {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
-  width: 90%; /* Full width by default */
+  width: 90%;
 }
 
 .form-group textarea {
-  resize: none; /* Prevent resizing */
+  resize: none; 
 }
 
-/* Error message styling */
 .error-message {
   color: red;
   margin-top: 10px;
 }
 
-/* Button container styling */
 .button-container {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  grid-template-columns: 1fr 1fr; 
   gap: 10px;
 }
 
-/* Button styling */
 .submit, .view-list-button {
   padding: 10px 20px;
   border: none;
@@ -87,24 +78,20 @@ label {
   cursor: pointer;
 }
 
-/* Add Project button */
 .submit {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   color: white;
 }
 
-/* View Project Details List button */
 .view-list-button {
-  background-color: #2196F3; /* Blue */
+  background-color: #2196F3; 
   color: white;
 }
 
-/* Button hover effects */
 .submit:hover, .view-list-button:hover {
-  opacity: 0.9; /* Slightly transparent on hover */
+  opacity: 0.9; 
 }
 
-/* Project details grid */
 .project-details-grid {
   display: grid;
   padding-top: 20px;
@@ -148,7 +135,6 @@ label {
   background-color: #1976D2;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 600px) {
   .project-container {
     margin: 20px;
@@ -168,18 +154,17 @@ label {
     gap: 15px;
   }
 
-  /* Specific styles for input boxes on smaller screens */
   .form-group input[name="project-name"],
   .form-group input[name="tools-used"] {
-    max-width: 90%; /* Full width on small screens */
+    max-width: 90%; 
   }
 
   .form-group input[name="project-name"] {
-    width: 50%; /* Full width */
+    width: 50%; 
   }
 
   .form-group input[name="tools-used"] {
-    width: 50%; /* Full width */
+    width: 50%; 
   }
 }
 
@@ -197,18 +182,17 @@ label {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
-  /* Specific styles for input boxes on medium screens */
   .form-group input[name="project-name"],
   .form-group input[name="tools-used"] {
-    max-width: 90%; /* Full width */
+    max-width: 90%; 
   }
 
   .form-group input[name="project-name"] {
-    width: 50%; /* Full width */
+    width: 50%; 
   }
 
   .form-group input[name="tools-used"] {
-    width: 50%; /* Full width */
+    width: 50%; 
   }
 }
 
@@ -226,10 +210,9 @@ label {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 
-  /* Specific styles for input boxes on larger screens */
   .form-group input[name="project-name"],
   .form-group input[name="tools-used"] {
-    width: 60%; /* Default width for larger screens */
-    max-width: 100%; /* Ensure it doesn’t exceed container width */
+    width: 60%; 
+    max-width: 100%; 
   }
 }

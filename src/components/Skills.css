@@ -1,20 +1,19 @@
 .skills-interest-container {
   padding: 20px;
   max-width: 800px;
-  margin: 20px auto; /* Added margin to ensure the div doesn't touch the screen edges */
+  margin: 20px auto; 
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #ddd;
-  box-sizing: border-box; /* Ensure padding is included in the total width and height */
+  box-sizing: border-box; 
 }
 
 .skillint {
-  background-image: url("details6.avif"); /* Add your image URL here */
+  background-image: url("details6.avif");
   background-size: cover;
   background-position: center;
-  padding-top: 50px; /* Adjust padding as needed */
-  padding-bottom: 50px; /* Adjust padding as needed */
-  /* Optional: adds a shadow for better visual separation */
+  padding-top: 50px; 
+  padding-bottom: 50px; 
 }
 
 .skills-interest-container h1 {
@@ -78,7 +77,6 @@
   margin-top: 20px;
 }
 
-/* Button styling */
 .submit-button-SI, .download-button-SI {
   padding: 10px 20px;
   border: none;
@@ -87,38 +85,34 @@
   cursor: pointer;
 }
 
-/* Submit button styling */
 .submit-button-SI {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   color: white;
 }
 
-/* Download button styling */
 .download-button-SI {
-  background-color: #2196F3; /* Blue */
+  background-color: #2196F3; 
   color: white;
 }
 
-/* Button hover effects */
 .submit-button-SI:hover, .download-button-SI:hover {
-  opacity: 0.9; /* Slightly transparent on hover */
+  opacity: 0.9; 
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 600px) {
   .skills-interest-container{
     margin:20px;
   }
   .grid-container {
-    grid-template-columns: 1fr; /* Single column layout on small screens */
+    grid-template-columns: 1fr; 
   }
 
   .form-group-si input {
-    width: 90%; /* Full width input fields on small screens */
+    width: 90%; 
   }
 
   .button-container-SI {
-    flex-direction: column; /* Stack buttons vertically on small screens */
+    flex-direction: column; 
     gap: 10px;
   }
 }
@@ -128,28 +122,28 @@
     margin:20px;
   }
   .grid-container {
-    grid-template-columns: 1fr 1fr; /* Two-column layout on medium screens */
+    grid-template-columns: 1fr 1fr; 
   }
 
   .form-group-si input {
-    width: 90%; /* Slightly narrower input fields on medium screens */
+    width: 90%; 
   }
 
   .button-container-SI {
-    flex-direction: row; /* Horizontal buttons layout */
+    flex-direction: row; 
   }
 }
 
 @media (min-width: 901px) {
   .grid-container {
-    grid-template-columns: 1fr 1fr; /* Two-column layout on large screens */
+    grid-template-columns: 1fr 1fr; 
   }
 
   .form-group-si input {
-    width: 80%; /* Original width input fields on large screens */
+    width: 80%;
   }
 
   .button-container-SI {
-    flex-direction: row; /* Horizontal buttons layout */
+    flex-direction: row; 
   }
 }
