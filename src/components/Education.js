@@ -71,6 +71,7 @@ const Education = ({ onAddEducationDetail }) => {
 
   return (
 
+    <div className='eduBody'>
     <div className="education-details-container">
       <div className="spacer"></div> {/* Spacer to move heading down */}
       <h1 className='edu-header'>EDUCATION DETAILS</h1>
@@ -188,6 +189,7 @@ const Education = ({ onAddEducationDetail }) => {
           </div>
         </form>
       </div>
+    </div>
     </div>
 
   );

@@ -47,7 +47,7 @@
 .skills-grid h2, .interests-grid h2 {
   margin-bottom: 10px;
   font-size: 20px;
-  color: #555;
+  color: #000;
 }
 
 .form-group-si {
@@ -69,6 +69,12 @@
   border: 1px solid #ddd;
   border-radius: 3px;
 }
+
+/* .form-group-si input:focus {
+  border: 1px solid #000; 
+  outline: none; 
+} */
+
 
 .button-container-SI {
   display: flex;

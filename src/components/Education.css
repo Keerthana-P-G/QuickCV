@@ -10,7 +10,10 @@
   position: relative; 
   box-sizing: border-box; 
 }
+.eduBody{
+  overflow: hidden;
 
+}
 .edu-header {
   padding-left: 270px; 
 }
