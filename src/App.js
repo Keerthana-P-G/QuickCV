@@ -1,6 +1,7 @@
 
 
 import React,{useState} from 'react';
+// import RoleSearch from './components/RoleSearch';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './components/Home';
@@ -16,6 +17,7 @@ import InternDetailList from './components/InternDetailList';
 import Project from './components/Project';
 import ProjectDetailList from './components/ProjectDetailList';
 import Skills from './components/Skills'; 
+// import Counter from './components/Counter';
 const App = () => {
     const [internDetails, setInternDetails] = useState([]);
   const [projectDetails, setProjectDetails] = useState([]);
@@ -36,6 +38,9 @@ const App = () => {
     // No action needed for this example; navigation is handled by the Link component in ProjectDetailList
   };
   return (
+    // <div>
+    //   <Counter/>
+    // </div>
     <Router>
       <Nav/>
       <Routes>
@@ -43,6 +48,7 @@ const App = () => {
         <Route path="/login" element={<AuthPage/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<Contact />} />
+      {/* <Route path="/ax" element={<RoleSearch/>}/> */}
         <Route path="/exp" element={<Exp/>} />
         <Route path="/personal-detail-form" element={<PersonalDetailForm/>} />
         <Route path="/education" element={<Education/>} />

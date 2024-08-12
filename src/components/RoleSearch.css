@@ -1,0 +1,80 @@
+.bkgsk {
+    background: linear-gradient(135deg, #0a0a23 0%, #1f1f5a 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px; 
+}
+
+.role-search-container-ax {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    box-sizing: border-box; 
+  }
+  
+  .search-input-ax {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .skills-container-ax {
+    margin-top: 20px;
+  }
+  
+  .skills-list-ax {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .skill-item-ax {
+    background-color: #007bff;
+    color: white;
+    width: 100%; 
+    max-width: 200px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .search-input-ax {
+      font-size: 14px;
+      max-width: 350px;
+    }
+  
+    .skill-item-ax {
+      max-width: 150px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-input-ax {
+      font-size: 12px;
+      max-width: 300px; 
+    }
+  
+    .skill-item-ax {
+      max-width: 100%;
+      font-size: 12px;
+    }
+  }
+  

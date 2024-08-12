@@ -1,0 +1,73 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Section Styles */
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  .details {
+    margin: 5px 0;
+  }
+  
+  .details strong {
+    display: block;
+  }
+  
+  /* List Item Styles */
+  .list-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Button Styles */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

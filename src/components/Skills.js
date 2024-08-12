@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Skills.css'; 
+import './Skills.css';
 
 const Skills = () => {
   const [skills, setSkills] = useState(['', '', '', '', '', '']);
@@ -29,12 +29,35 @@ const Skills = () => {
 
     setError('');
 
-    setSkills(['', '', '', '', '', '']);
-    setInterests(['', '', '', '', '', '']);
+    // Here you can optionally submit the data to the backend if needed
+    // e.g., sendSkillsAndInterestsToBackend();
   };
 
-  const handleDownloadResume = () => {
-    alert('Downloaded successfully.');
+  const handleDownloadResume = async () => {
+    try {
+      const response = await fetch('/api/resume/generate', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/pdf'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      alert('Failed to download the resume.');
+    }
   };
 
   return (

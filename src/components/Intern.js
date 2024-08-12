@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Interns.css'; 
 
 const Intern = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleOptionChange = async (option) => {
+    setSelectedOption(option);
+    try {
+      await axios.post('http://localhost:5000/api/interns', { attendedInternship: option === 'yes' });
+    } catch (error) {
+      console.error('Error saving internship status:', error);
+    }
+  };
 
   return (
     <div className="intern-container">
@@ -16,13 +26,13 @@ const Intern = () => {
           <div className="button-group">
             <button
               className="button yes-button"
-              onClick={() => setSelectedOption('yes')}
+              onClick={() => handleOptionChange('yes')}
             >
               YES
             </button>
             <button
               className="button no-button"
-              onClick={() => setSelectedOption('no')}
+              onClick={() => handleOptionChange('no')}
             >
               NO
             </button>

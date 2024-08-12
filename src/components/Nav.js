@@ -24,7 +24,7 @@ const Nav = () => {
           <Link to="/about" className="nav-link-about">ABOUT</Link>
         </li>
         {/* <li>
-          <button className="navbar-button">Build My Resume</button>
+          <Link to="/ax" >SKILL SEARCH</Link>
         </li> */}
       </ul>
     </nav>
