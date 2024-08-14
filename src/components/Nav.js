@@ -14,18 +14,18 @@ const Nav = () => {
         <li>
           <Link to="/" className="nav-link-home">HOME</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/login" className="nav-link-login">LOGIN</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/contact" className="nav-link-contact">CONTACT</Link>
         </li>
         <li>
           <Link to="/about" className="nav-link-about">ABOUT</Link>
         </li>
-        {/* <li>
-          <Link to="/ax" >SKILL SEARCH</Link>
-        </li> */}
+        <li>
+          <Link to="/privacy" >PRIVACY</Link>
+        </li>
       </ul>
     </nav>
   );

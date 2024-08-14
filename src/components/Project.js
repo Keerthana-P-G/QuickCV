@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './Project.css';
 
 const Project = () => {
@@ -7,14 +8,21 @@ const Project = () => {
   const [toolsUsed, setToolsUsed] = useState('');
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
-  const [submitted, setSubmitted] = useState(false);
   const [projectDetails, setProjectDetails] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+  const [editId, setEditId] = useState(null);
   const [editForm, setEditForm] = useState({
     projectName: '',
     toolsUsed: '',
     description: '',
   });
+
+  useEffect(() => {
+    // Fetch project details on component mount
+    axios.get('https://quickcv-backend.onrender.com/project')
+      .then(res => setProjectDetails(res.data))
+      .catch(err => console.error('Error fetching project details:', err));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,35 +31,42 @@ const Project = () => {
       setError('All fields are required.');
       return;
     }
-    
+
     setError('');
 
+    const data = { projectName, toolsUsed, description };
+
     if (editIndex !== null) {
-      const updatedDetails = projectDetails.map((detail, index) =>
-        index === editIndex ? { projectName, toolsUsed, description } : detail
-      );
-      setProjectDetails(updatedDetails);
-      setEditIndex(null);
+      axios.put(`https://quickcv-backend.onrender.com/project/${editId}`, data)
+        .then(() => {
+          const updatedDetails = projectDetails.map((detail, index) =>
+            index === editIndex ? { ...data, _id: editId } : detail
+          );
+          setProjectDetails(updatedDetails);
+          resetForm();
+        })
+        .catch(err => {
+          console.error('Error updating project:', err);
+          setError('Failed to update project. Please try again.');
+        });
     } else {
-      const newProjectDetail = {
-        projectName,
-        toolsUsed,
-        description,
-      };
-      setProjectDetails([...projectDetails, newProjectDetail]);
+      axios.post('https://quickcv-backend.onrender.com/project', data)
+        .then(res => {
+          setProjectDetails([...projectDetails, res.data]);
+          resetForm();
+        })
+        .catch(err => {
+          console.error('Error adding project:', err);
+          setError('Failed to add project. Please try again.');
+        });
     }
-
-    setProjectName('');
-    setToolsUsed('');
-    setDescription('');
-
-    setSubmitted(true);
   };
 
   const handleEdit = (index) => {
     const detail = projectDetails[index];
     setEditForm(detail);
     setEditIndex(index);
+    setEditId(detail._id);
     setProjectName(detail.projectName);
     setToolsUsed(detail.toolsUsed);
     setDescription(detail.description);
@@ -68,30 +83,48 @@ const Project = () => {
   const handleEditSubmit = (e) => {
     e.preventDefault();
     const updatedDetails = projectDetails.map((detail, index) =>
-      index === editIndex ? editForm : detail
+      index === editIndex ? { ...editForm, _id: editId } : detail
     );
-    setProjectDetails(updatedDetails);
+    axios.put(`https://quickcv-backend.onrender.com/project/${editId}`, editForm)
+      .then(() => {
+        setProjectDetails(updatedDetails);
+        resetForm();
+      })
+      .catch(err => {
+        console.error('Error updating project:', err);
+        setError('Failed to update project. Please try again.');
+      });
+  };
+
+  const handleDelete = (index, id) => {
+    axios.delete(`https://quickcv-backend.onrender.com/project/${id}`)
+      .then(() => {
+        const updatedDetails = projectDetails.filter((_, i) => i !== index);
+        setProjectDetails(updatedDetails);
+      })
+      .catch(err => {
+        console.error('Error deleting project:', err);
+        setError('Failed to delete project. Please try again.');
+      });
+  };
+
+  const resetForm = () => {
+    setProjectName('');
+    setToolsUsed('');
+    setDescription('');
     setEditIndex(null);
+    setEditId(null);
     setEditForm({
       projectName: '',
       toolsUsed: '',
       description: '',
     });
-
-    setProjectName('');
-    setToolsUsed('');
-    setDescription('');
-  };
-
-  const handleDelete = (index) => {
-    const updatedDetails = projectDetails.filter((_, i) => i !== index);
-    setProjectDetails(updatedDetails);
   };
 
   return (
     <div className="procontainer">
       <div className='project-container'>
-        <h1 >PROJECT DETAILS</h1>
+        <h1>PROJECT DETAILS</h1>
         <p>Please provide details about your projects here.</p>
         {error && <p className="error-message">{error}</p>}
         <form className="project-form" onSubmit={editIndex !== null ? handleEditSubmit : handleSubmit}>
@@ -136,7 +169,7 @@ const Project = () => {
         <div className="project-details-grid">
           {projectDetails.length > 0 ? (
             projectDetails.map((detail, index) => (
-              <div key={index} className="project-detail-item">
+              <div key={detail._id} className="project-detail-item">
                 <div className="detail-info">
                   <strong>Project Name:</strong> {detail.projectName}<br />
                   <strong>Tools Used:</strong> {detail.toolsUsed}<br />
@@ -144,7 +177,7 @@ const Project = () => {
                 </div>
                 <div className="detail-actions">
                   <button className="edit-button" onClick={() => handleEdit(index)}>Edit</button>
-                  <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button>
+                  <button className="delete-button" onClick={() => handleDelete(index, detail._id)}>Delete</button>
                 </div>
               </div>
             ))

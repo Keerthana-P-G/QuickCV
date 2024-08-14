@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 import './PersonalDetailForm.css';
 
 function PersonalDetailsForm() {
@@ -46,7 +47,17 @@ function PersonalDetailsForm() {
       ...errors,
       [name]: validateField(name, value)
     });
+    
   };
+
+
+  const handleSubmit = ()=>{
+    axios.post('https://quickcv-backend.onrender.com/per',personalDetails)
+    .then((res)=>{
+      console.log(res)
+    })
+  }
+
 
   return (
     <div className="personal-details-container">
@@ -123,7 +134,7 @@ function PersonalDetailsForm() {
             </label>
           </div>
           <div className="button-group">
-            <button className="bbb" type="submit" disabled={!isSubmitEnabled}>
+            <button onClick={handleSubmit} className="bbb" type="submit" disabled={!isSubmitEnabled}>
               <Link
                 to={isSubmitEnabled ? "/education" : "#"}
                 className={isSubmitEnabled ? '' : 'disabled-link'}

@@ -17,6 +17,7 @@ import InternDetailList from './components/InternDetailList';
 import Project from './components/Project';
 import ProjectDetailList from './components/ProjectDetailList';
 import Skills from './components/Skills'; 
+import PrivacyPolicy from './components/PrivacyPolicy';
 // import Counter from './components/Counter';
 const App = () => {
     const [internDetails, setInternDetails] = useState([]);
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/login" element={<AuthPage/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyPolicy/>}/>
       {/* <Route path="/ax" element={<RoleSearch/>}/> */}
         <Route path="/exp" element={<Exp/>} />
         <Route path="/personal-detail-form" element={<PersonalDetailForm/>} />

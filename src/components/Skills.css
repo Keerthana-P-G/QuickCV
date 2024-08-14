@@ -10,6 +10,7 @@
 
 .skillint {
   background-image: url("details6.avif");
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   padding-top: 50px; 

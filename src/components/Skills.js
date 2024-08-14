@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Skills.css';
 
 const Skills = () => {
-  const [skills, setSkills] = useState(['', '', '', '', '', '']);
-  const [interests, setInterests] = useState(['', '', '', '', '', '']);
+  const [skills, setSkills] = useState(['', '', '', '']);
+  const [interests, setInterests] = useState(['', '', '', '']);
   const [error, setError] = useState('');
 
   const handleChange = (e, type, index) => {
@@ -22,32 +23,34 @@ const Skills = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (skills.slice(0, 3).some(skill => !skill) || interests.slice(0, 3).some(interest => !interest)) {
-      setError('The first three fields in both Skills and Interests are mandatory.');
-      return;
-    }
-
+    // if (skills.slice(0, 3).some(skill => !skill) || interests.slice(0, 3).some(interest => !interest)) {
+    //   setError('The first three fields in both Skills and Interests are mandatory.');
+    //   return;
+    // }
+    
+    axios.post('https://quickcv-backend.onrender.com/skills', {
+      skills: skills,
+      interests: interests
+    }).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.error('Error saving skills and interests:', err);
+      setError('Failed to save skills and interests.');
+    });
+    setSkills(['', '', '', '']);
+    setInterests(['', '', '', '']);
+    
+    
     setError('');
-
-    // Here you can optionally submit the data to the backend if needed
-    // e.g., sendSkillsAndInterestsToBackend();
   };
 
   const handleDownloadResume = async () => {
     try {
-      const response = await fetch('/api/resume/generate', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/pdf'
-        }
+      const response = await axios.get('http://localhost:5000/api/resume/download', {
+        responseType: 'blob',
       });
-      
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
 
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      const url = window.URL.createObjectURL(new Blob([response.data]));
       const a = document.createElement('a');
       a.href = url;
       a.download = 'resume.pdf';
@@ -56,7 +59,7 @@ const Skills = () => {
       a.remove();
     } catch (error) {
       console.error('Error downloading resume:', error);
-      alert('Failed to download the resume.');
+      alert('Sorry, Fill it again.');
     }
   };
 
@@ -101,7 +104,7 @@ const Skills = () => {
             <button
               type="button"
               className="download-button-SI"
-              onClick={handleDownloadResume}
+              onClick={handleDownloadResume}  // This button triggers the resume download
             >
               Download Resume
             </button>
@@ -113,3 +116,5 @@ const Skills = () => {
 };
 
 export default Skills;
+
+

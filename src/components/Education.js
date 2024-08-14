@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
+import axios from 'axios'
 import './Education.css';
 
-const Education = ({ onAddEducationDetail }) => {
+const Education = ({ }) => {
   const [schoolName, setSchoolName] = useState('');
   const [schoolEducation, setSchoolEducation] = useState('');
   const [degree, setDegree] = useState('');
@@ -42,17 +43,15 @@ const Education = ({ onAddEducationDetail }) => {
       return;
     }
 
-    onAddEducationDetail({ 
-      schoolName, 
-      schoolEducation, 
-      degree, 
-      collegeName, 
-      fieldOfStudy, 
-      gpa, 
-      honors, 
-      graduationMonth, 
-      graduationYear 
-    });
+    axios.post('https://quickcv-backend.onrender.com/edu',{
+      SchoolName:schoolName,SchoolEducation:schoolEducation,
+      Degree:degree,CollegeName:collegeName,
+      FieldOfStudy:fieldOfStudy,Gpa:gpa,
+      Honors:honors,GraduationMonth:graduationMonth,
+      GraduationYear:graduationYear
+    }).then((res)=>{
+      console.log(res)
+    })
 
     // Clear form fields after submission
     setSchoolName('');
@@ -77,7 +76,7 @@ const Education = ({ onAddEducationDetail }) => {
       <h1 className='edu-header'>EDUCATION DETAILS</h1>
       {/* <p>Provide your education details below.</p> */}
       <div className="education-details-page">
-        <form onSubmit={handleSubmit} className="education-form">
+        <form className="education-form">
           <div className="form-column">
             <label className="form-label">
               School Name:
@@ -181,12 +180,17 @@ const Education = ({ onAddEducationDetail }) => {
             </label>
           </div>
           <div className="button-container-e">
-            <Link to="/intern">
-              <button type="submit" className="add-button" disabled={!isFormValid}>
+           
+              <button onClick={handleSubmit} type="submit" className="add-button" disabled={!isFormValid}>
                 Add
               </button>
+              <div>
+            <Link to="/intern-details">
+           <button className="add-button">Next</button> 
             </Link>
           </div>
+          </div>  
+           
         </form>
       </div>
     </div>

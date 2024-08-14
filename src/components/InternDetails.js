@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './InternDetails.css';
 
 const InternDetails = () => {
@@ -10,6 +11,14 @@ const InternDetails = () => {
   const [toDate, setToDate] = useState('');
   const [details, setDetails] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+  const [editId, setEditId] = useState(null);
+
+  useEffect(() => {
+    // Fetch details on component mount
+    axios.get('https://quickcv-backend.onrender.com/intern')
+      .then(res => setDetails(res.data))
+      .catch(err => console.error(err));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,14 +28,27 @@ const InternDetails = () => {
       return;
     }
 
+    const data = { companyName, location, topic, fromDate, toDate };
+
     if (editIndex !== null) {
-      const updatedDetails = details.map((detail, index) =>
-        index === editIndex ? { companyName, location, topic, fromDate, toDate } : detail
-      );
-      setDetails(updatedDetails);
-      setEditIndex(null);
+      // Update existing detail
+      axios.put(`https://quickcv-backend.onrender.com/intern/${editId}`, data)
+        .then(() => {
+          const updatedDetails = details.map((detail, index) =>
+            index === editIndex ? { ...data, _id: editId } : detail
+          );
+          setDetails(updatedDetails);
+          setEditIndex(null);
+          setEditId(null);
+        })
+        .catch(err => console.error(err));
     } else {
-      setDetails([...details, { companyName, location, topic, fromDate, toDate }]);
+      // Add new detail
+      axios.post('https://quickcv-backend.onrender.com/intern', data)
+        .then(res => {
+          setDetails([...details, res.data]);
+        })
+        .catch(err => console.error(err));
     }
 
     setCompanyName('');
@@ -44,11 +66,16 @@ const InternDetails = () => {
     setFromDate(detail.fromDate);
     setToDate(detail.toDate);
     setEditIndex(index);
+    setEditId(detail._id);
   };
 
-  const handleDelete = (index) => {
-    const updatedDetails = details.filter((_, i) => i !== index);
-    setDetails(updatedDetails);
+  const handleDelete = (index, id) => {
+    axios.delete(`https://quickcv-backend.onrender.com/intern/${id}`)
+      .then(() => {
+        const updatedDetails = details.filter((_, i) => i !== index);
+        setDetails(updatedDetails);
+      })
+      .catch(err => console.error(err));
   };
 
   return (
@@ -111,7 +138,7 @@ const InternDetails = () => {
       <div className="intern-detail-list">
         {details.length > 0 ? (
           details.map((detail, index) => (
-            <div key={index} className="intern-detail-item">
+            <div key={detail._id} className="intern-detail-item">
               <div className="detail-info">
                 <strong>Company Name:</strong> {detail.companyName}<br />
                 <strong>Location:</strong> {detail.location}<br />
@@ -121,7 +148,7 @@ const InternDetails = () => {
               </div>
               <div className="detail-actions">
                 <button className="edit-button" onClick={() => handleEdit(index)}>Edit</button>
-                <button className="delete-button" onClick={() => handleDelete(index)}>Delete</button>
+                <button className="delete-button" onClick={() => handleDelete(index, detail._id)}>Delete</button>
               </div>
             </div>
           ))

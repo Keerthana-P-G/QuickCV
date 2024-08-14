@@ -104,13 +104,21 @@
 }
 
 
+
 .button-container-e {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
   width: 100%;
 }
 
+.button-container-ex{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid red;
+  position: relative;
+}
 
 .add-button {
   background-color: #4CAF50;
